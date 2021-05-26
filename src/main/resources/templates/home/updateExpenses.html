@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Expenses</title>
+  <link rel="stylesheet" type="text/css" href="/expenseCSS.css">
+</head>
+<body>
+<ul>
+  <p style="color: wheat; text-align: left; float: left; padding-left: 10px; font-weight: bold"><a href="/" style="color: wheat; text-align: left; float: left; padding-left: 10px; font-weight: bold">Welcome to Nordic Motorhome</a></p>
+  <li><a class="dtopbtn" href="/motorhome">Motorhomes</a></li>
+  <li><a class="dtopbtn" href="/customer">Customers</a></li>
+  <li><a class="dtopbtn" href="/rental">Rentals</a></li>
+</ul>
+
+<h1 class="expensesHeader">Update Expenses</h1>
+<p class="expensesParagraph">Here is the chosen expense</p>
+<br>
+
+<div class="wrapperExpenses">
+  <form action="/expenses" method="post">
+    <div class="expensesParagraph">
+      <label>
+        Rental ID <input type="text" name="rental_id" th:value="${rental.rental_id}">
+      </label>
+      <label>
+        Rental end date(yyyy-mm-dd)<input type="text" name="rental_end_date" th:value="${expenses.rental_end_date}">
+      </label>
+      <label>
+        Rental End Time(hh:mm:ss)<input type="text" name="end_time" th:value="${expenses.end_time}">
+      </label>
+      <label>
+        Rental drop off location<input type="text" name="drop_off" th:value="${expenses.drop_off}">
+      </label>
+      <label>
+        Drop off extras<input type="text" name="drop_off_extras" th:value="${expenses.drop_off_extras}">
+      </label>
+      <label>
+        KM on the dashboard<input type="text" name="km_end" th:value="${expenses.km_end}">
+      </label>
+      <label>
+        Repair fee<input type="text" name="repair_fee" th:value="${expenses.repair_fee}">
+      </label>
+      <label>
+        Fuel level<input type="text" name="fuel_level" th:value="${expenses.fuel_level}">
+      </label>
+      <label>
+        Full Price<input type="text" name="full_price" th:value="${expenses.full_price}">
+      </label>
+      <div class="expensesButton">
+        <button type="submit" value="Save expenses">Save expenses</button>
+      </div>
+      <br>
+    </div>
+  </form>
+</div>
+</body>
+</html>
