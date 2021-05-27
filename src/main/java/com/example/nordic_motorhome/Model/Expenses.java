@@ -118,33 +118,6 @@ public class Expenses extends Rental{
     }
 
     public double getFull_price(){
-
-        double x = base_cost;
-        double z = drop_off_extra / 0.7;
-        double f = pick_up_extra / 0.7;
-        x = x + f + z;
-
-        LocalDate localDate1 = LocalDate.parse(rental_start_date);
-        LocalDate localDate2 = LocalDate.parse(rental_end_date);
-        long noOfDaysDifference = ChronoUnit.DAYS.between(localDate1, localDate2);
-
-        int kmDif = km_start - km_end;
-        int maxKm = (int) (kmDif / noOfDaysDifference);
-        if(maxKm > 400) {
-            x = x + maxKm - 400;
-        }
-        x = x + repair_fee;
-
-        if(fuel_level > 0.5) {
-            x = x +70;
-        }
-        if (season == "middle") {
-            x = x + 1.30;
-        } else if (season == "peak") {
-            x = x + 1.6;
-        }
-        x = full_price;
-
         return full_price;
     }
 

@@ -40,11 +40,12 @@
   </tr>
   </thead>
   <tbody>
-    <td th:text="${rental.rental_id}"></td>
+  <tr th:each="expenses: ${expenses}">
+    <td th:text="${expenses.rental_id}"></td>
     <td th:text="${expenses.rental_end_date}"></td>
     <td th:text="${expenses.end_time}"></td>
     <td th:text="${expenses.drop_off}"></td>
-    <td th:text="${expenses.drop_off_extras}"></td>
+    <td th:text="${expenses.drop_off_extra}"></td>
     <td th:text="${expenses.km_end}"></td>
     <td th:text="${expenses.repair_fee}"></td>
     <td th:text="${expenses.fuel_level}"></td>
