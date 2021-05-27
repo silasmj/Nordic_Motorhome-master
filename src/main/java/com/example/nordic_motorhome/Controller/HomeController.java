@@ -79,7 +79,7 @@ public class HomeController {
     }
     @GetMapping("/createExpenses")
     public String createExpenses(){
-            return "home/createExpenses";
+        return "home/createExpenses";
     }
 
     @PostMapping("/createExpenses")
