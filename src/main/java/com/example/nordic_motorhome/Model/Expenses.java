@@ -85,12 +85,12 @@ public class Expenses extends Rental{
         this.drop_off = drop_off;
     }
 
-    public int getDrop_off_extras() {
-        return drop_off_extras;
+    public int getDrop_off_extra() {
+        return drop_off_extra;
     }
 
-    public void setDrop_off_extras(int drop_off_extras) {
-        this.drop_off_extras = drop_off_extras;
+    public void setDrop_off_extra(int drop_off_extra) {
+        this.drop_off_extra = drop_off_extra;
     }
 
     public int getKm_end() {
