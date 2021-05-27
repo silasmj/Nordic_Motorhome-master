@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nordic Motorhome</title>
-    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+    <link rel="stylesheet" type="text/css" href="/expenseCSS.css">
 </head>
 <body>
 <ul>
@@ -14,15 +14,18 @@
 
 </ul>
 
-<h1 class="customerHeader">Create New expense</h1>
-<div class="wrapperCreateCustomer">
+<h1 class="expenseHeader">Create New expense</h1>
+<div class="wrapperCreateExpenses">
     <form action="/createExpenses" method="post">
-        <div class="customerParagraph">
+        <div class="expenseParagraph">
+            <label>
+                Enter base cost<input type="text" name="base_cost" placeholder="Enter base cost">
+            </label>
             <label>
                 Enter rental end date<input type="text" name="rental_end_date" placeholder="Enter rental end date">
             </label>
             <label>
-                Enter end time<input type="text" name="end_time" placeholder="Enter end time">
+                Enter end time<input type="time" name="end_time" placeholder="Enter end time">
             </label>
             <label>
                 Enter drop off<input type="text" name="drop_off" placeholder="enter drop off">
@@ -43,7 +46,7 @@
                 Enter full price<input type="text" name="full_price" placeholder="Enter the full price">
             </label>
 
-            <div class="createCustomer">
+            <div class="createExpense">
                 <button type="submit" value="Create new expenses">Add expenses</button>
             </div>
         </div>

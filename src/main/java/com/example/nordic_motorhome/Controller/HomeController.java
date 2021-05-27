@@ -81,10 +81,11 @@ public class HomeController {
     public String createExpenses(){
             return "home/createExpenses";
     }
+
     @PostMapping("/createExpenses")
     public String createExpenses(@ModelAttribute Expenses expenses){
         expensesService.createExpenses(expenses);
-        return "home/successExpenses";
+        return "home/succesExpense";
     }
 
     @GetMapping("/motorhome")
