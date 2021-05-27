@@ -24,7 +24,7 @@ public class ExpensesRepo {
 
     public Expenses createExpenses(Expenses e){
         String sql = "INSERT INTO expenses (base_cost, rental_end_date, end_time, drop_off, drop_off_extra, km_end, repair_fee, fuel_level, full_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) where rental_id = ?";
-        template.update(sql, e.getBase_cost(), e.getRental_end_date(), e.getEnd_time(), e.getDrop_off(), e.getDrop_off_extras(), e.getKm_end(), e.getRepair_fee(), e.getFuel_level(), e.getFull_price(), e.getRental_id());
+        template.update(sql, e.getBase_cost(), e.getRental_end_date(), e.getEnd_time(), e.getDrop_off(), e.getDrop_off_extra(), e.getKm_end(), e.getRepair_fee(), e.getFuel_level(), e.getFull_price(), e.getRental_id());
         return null;
     }
 
@@ -37,7 +37,7 @@ public class ExpensesRepo {
 
     public Expenses updateExpenses(int rental_id, Expenses e) {
         String sql = "UPDATE expenses SET rental_end_date = ?, end_time = ?, drop_off = ?, drop_off_extra = ?, km_end ?, repair_fee = ?, fuel_level = ?, full_price = ? WHERE rental_id = ?";
-        template.update(sql, e.getRental_end_date(), e.getEnd_time(), e.getDrop_off(), e.getDrop_off_extras(), e.getKm_end(), e.getRepair_fee(), e.getFuel_level(), e.getFull_price());
+        template.update(sql, e.getRental_end_date(), e.getEnd_time(), e.getDrop_off(), e.getDrop_off_extra(), e.getKm_end(), e.getRepair_fee(), e.getFuel_level(), e.getFull_price());
         return null;
     }
 }

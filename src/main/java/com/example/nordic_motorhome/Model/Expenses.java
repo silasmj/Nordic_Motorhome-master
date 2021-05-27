@@ -16,7 +16,7 @@ public class Expenses extends Rental{
     private String rental_end_date;
     private String end_time;
     private String drop_off;
-    private int drop_off_extras;
+    private int drop_off_extra;
     private int km_end;
     private int repair_fee;
     private float fuel_level;
@@ -29,7 +29,7 @@ public class Expenses extends Rental{
         this.rental_end_date = rental_end_date;
         this.end_time = end_time;
         this.drop_off = drop_off;
-        this.drop_off_extras = drop_off_extras;
+        this.drop_off_extra = drop_off_extra;
         this.km_end = km_end;
         this.repair_fee = repair_fee;
         this.fuel_level = fuel_level;
