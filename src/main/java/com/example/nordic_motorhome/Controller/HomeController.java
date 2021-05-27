@@ -72,10 +72,9 @@ public class HomeController {
         model.addAttribute("rental", rentalService.findRentalById(rental_id));
         return "home/updateRental";
     }
-    @GetMapping("/expenses")
-    public String expenses(Model model){
-        List<Expenses> expensesList = expensesService.showExpenses();
-        model.addAttribute("expenses", expensesList);
+    @GetMapping("/expenses/{rental_id}")
+    public String expenses(@PathVariable("rental_id") int rental_id, Model model){
+        model.addAttribute("expenses", expensesService.findExpensesById(rental_id));
         return "home/expenses";
     }
     @GetMapping("/createExpenses")

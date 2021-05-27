@@ -50,7 +50,7 @@
     <td th:text="${expenses.fuel_level}"></td>
     <td th:text="${expenses.full_price}"></td>
     <td>
-      <a th:href="@{'/updateExpenses/'+${rental.rental_id}}">
+      <a th:href="@{'/updateExpenses/'+${expenses.rental_id}}">
         <button>Edit Expenses</button>
       </a>
     </td>

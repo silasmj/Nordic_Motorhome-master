@@ -23,9 +23,7 @@ public class RentalRepo {
 
     public Rental createRental(Rental r) {
         String sql = "INSERT INTO rental (rental_id, customer_id, motorhome_id, rental_start_date, start_time, bike_rack, bed_linen, chairs, picnic_table, child_seat, km_start, season, pick_up, pick_up_extra) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        String sql2 = "INSERT INTO expenses (rental_end_date, end_time, drop_off, km_end, repair_fee, fuel_level, full_price) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL) where rental.rental_id = ?";
         template.update(sql, r.getRental_id(), r.getCustomer_id(), r.getMotorhome_id(), r.getRental_start_date(), r.getStart_time(), r.getBike_rack(), r.getBed_linen(), r.getChairs(), r.getPicnic_table(), r.getChild_seat(), r.getKm_start(), r.getSeason(), r.getPick_up(), r.getPick_up_extra());
-        template.update(sql2);
         return null;
     }
     public Boolean deleteRental(int rental_id){

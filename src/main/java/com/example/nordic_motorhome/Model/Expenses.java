@@ -12,6 +12,7 @@ import java.util.Date;
 public class Expenses extends Rental{
     @Id
     private int rental_id;
+    private int base_cost;
     private String rental_end_date;
     private String end_time;
     private String drop_off;
@@ -21,9 +22,10 @@ public class Expenses extends Rental{
     private float fuel_level;
     private double full_price;
 
-    public Expenses(int rental_id, int customer_id, int motorhome_id, String rental_start_date, String start_time, int bike_rack, int bed_linen, int chairs, int picnic_table, int child_seat, int km_start, String season, String pick_up, int pick_up_extra, int rental_id1, String rental_end_date, String end_time, String drop_off, int drop_off_extras, int km_end, int repair_fee, float fuel_level, double full_price) {
+    public Expenses(int rental_id, int customer_id, int motorhome_id, String rental_start_date, String start_time, int bike_rack, int bed_linen, int chairs, int picnic_table, int child_seat, int km_start, String season, String pick_up, int pick_up_extra, int rental_id1, int base_cost, String rental_end_date, String end_time, String drop_off, int drop_off_extra, int km_end, int repair_fee, float fuel_level, double full_price) {
         super(rental_id, customer_id, motorhome_id, rental_start_date, start_time, bike_rack, bed_linen, chairs, picnic_table, child_seat, km_start, season, pick_up, pick_up_extra);
-        this.rental_id = rental_id;
+        this.rental_id = rental_id1;
+        this.base_cost = base_cost;
         this.rental_end_date = rental_end_date;
         this.end_time = end_time;
         this.drop_off = drop_off;
@@ -33,16 +35,30 @@ public class Expenses extends Rental{
         this.fuel_level = fuel_level;
         this.full_price = full_price;
     }
-    public Expenses(int rental_id, int customer_id, int motorhome_id, String rental_start_date, String start_time, int bike_rack, int bed_linen, int chairs, int picnic_table, int child_seat, String pick_up, int pick_up_extra, int km_start, String season, String rental_end_date, String end_time, String drop_off) {
-        super(rental_id, customer_id, motorhome_id, rental_start_date, start_time, bike_rack, bed_linen, chairs, picnic_table, child_seat, km_start, season, pick_up, pick_up_extra);
+
+    public Expenses(int rental_id, int base_cost, String rental_end_date, String end_time, String drop_off, int drop_off_extra, int km_end, int repair_fee, float fuel_level, double full_price) {
+        this.rental_id = rental_id;
+        this.base_cost = base_cost;
         this.rental_end_date = rental_end_date;
         this.end_time = end_time;
         this.drop_off = drop_off;
-
+        this.drop_off_extra = drop_off_extra;
+        this.km_end = km_end;
+        this.repair_fee = repair_fee;
+        this.fuel_level = fuel_level;
+        this.full_price = full_price;
     }
 
     public Expenses(){
 
+    }
+
+    public int getBase_cost() {
+        return base_cost;
+    }
+
+    public void setBase_cost(int base_cost) {
+        this.base_cost = base_cost;
     }
 
     public int getRental_id() {
@@ -102,8 +118,9 @@ public class Expenses extends Rental{
     }
 
     public double getFull_price(){
-        double x = 0;
-        double z = drop_off_extras / 0.7;
+
+        double x = base_cost;
+        double z = drop_off_extra / 0.7;
         double f = pick_up_extra / 0.7;
         x = x + f + z;
 
